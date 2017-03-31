@@ -1,0 +1,12 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/detail/detail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#e54847",
+    "navigationBarTitleText": "喵眼电影",
+    "navigationBarTextStyle":"white"
+  }
+}

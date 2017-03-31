@@ -1,0 +1,34 @@
+<!--detail.wxml-->
+<view class="container">
+  <view class="filter1" style="background-image:url({{img}})"></view>
+  <view class="filter2"></view>
+  <view class="banner">
+    <image class="banner_img" src="{{img}}"></image>
+    <view class="banner_info" >
+      <view class="banner_title">{{nm}}</view>
+      <view class="banner_dir">导演:{{dir}}</view>
+      <view class="banner_score">
+        <view class="user_score">
+          <view class="user_score_title">用户评分</view>
+          <view class="user_score_res">
+            {{sc}}<text class="ucount">({{snum}}人评论)</text>
+          </view>
+        </view>
+        <view class="line"></view>
+        <view class="pro_score">
+          <view class="pro_score_title">期待人数</view>
+          <view class="pro_score_res">{{wish}}</view>
+        </view>
+        <view class="clear" hidden="hidden"></view>
+      </view>
+      <view class="banner_bottom">{{cat}}</view>
+      <view class="banner_bottom">{{src}}/{{dur}}分钟</view>
+      <view class="banner_bottom">{{rt}}</view>
+      <view class="banner_bottom">{{ver}}</view>
+    </view>
+  </view>
+  <view class="intro" style="max-height:{{max_height}}">
+    <text>{{dra}}</text>
+  </view>
+  <view class="arrow" data-open="{{isopen}}" bindtap="arrow_tap">{{arrow}}</view>
+</view>

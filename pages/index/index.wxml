@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<view class="container">
+  <!--<view class="search_box">
+    <input class="search_input" placeholder="这里是查询框" />
+    <button>查询</button>
+  </view>-->
+  <view class="movie_list">
+    <view bindtap="detail" wx:for="{{movie_list}}" data-id="{{item.id}}" class="movie_block">
+      <image src="{{item.img}}"></image>
+      <view class="movie_info">
+        <view class="movie_title"><text>{{item.nm}}</text></view>
+        <view class="movie_scm"><text>{{item.scm}}</text></view>
+        <view class="movie_showinfo"><text>{{item.showInfo}}</text></view>
+      </view>
+      <view class="movie_rigth">
+        <view class="movie_score">
+          <text>{{item.sc}}</text>
+          <text style="margin-left:2px;font-size: 12px;font-weight:normal">分</text>
+        </view>
+        <view class="movie_want">
+          <text>{{item.wish}}</text>
+          <text style="margin-left:2px;font-size: 12px;font-weight:normal">人想看</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
