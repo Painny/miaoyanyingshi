@@ -5,7 +5,7 @@
     <button>查询</button>
   </view>-->
   <view class="movie_list">
-    <view bindtap="detail" wx:for="{{movie_list}}" data-id="{{item.id}}" class="movie_block">
+    <view bindtap="detail" wx:for="{{movie_list}}" wx:key="key" data-id="{{item.id}}" class="movie_block">
       <image src="{{item.img}}"></image>
       <view class="movie_info">
         <view class="movie_title"><text>{{item.nm}}</text></view>

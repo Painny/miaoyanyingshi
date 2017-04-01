@@ -6,6 +6,7 @@ Page({
   onLoad: function (option) {
     var id=option.id;
     var that =this;
+     that.setData({"ishidden":"hidden"});
     wx.request({
       url: 'https://m.maoyan.com/movie/'+id+'.json',
       data: {},
@@ -34,5 +35,12 @@ Page({
       this.setData({'isopen':false});
       this.setData({'arrow':'⇣'});
     }
+  },
+  play_vd:function(){
+    this.setData({"ishidden":"show"});
+  },
+  ended:function(){
+    // this.setData({"ishidden":"hidden"});
+    console.log(this.data)
   }
 })

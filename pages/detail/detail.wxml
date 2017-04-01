@@ -4,6 +4,7 @@
   <view class="filter2"></view>
   <view class="banner">
     <image class="banner_img" src="{{img}}"></image>
+    <image bindtap="play_vd" src="../img/timg.jpg" class="play"></image>
     <view class="banner_info" >
       <view class="banner_title">{{nm}}</view>
       <view class="banner_dir">导演:{{dir}}</view>
@@ -27,6 +28,7 @@
       <view class="banner_bottom">{{ver}}</view>
     </view>
   </view>
+  <video src="{{vd}}" id="vd" class="vd-{{ishidden}}" controls bindeneded="ended"></video>
   <view class="intro" style="max-height:{{max_height}}">
     <text>{{dra}}</text>
   </view>
