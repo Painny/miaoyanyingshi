@@ -32,5 +32,26 @@
   <view class="intro" style="max-height:{{max_height}}">
     <text>{{dra}}</text>
   </view>
-  <view class="arrow" data-open="{{isopen}}" bindtap="arrow_tap">{{arrow}}</view>
+  <view class="arrow" data-open="{{isopen}}" bindtap="arrow_tap">
+  {{arrow}}</view>
+  <view class="cmts_tip" >短评</view>
+  <view class="cmts_item" wx:for="{{hcmts}}" wx:key="key">
+    <view class="star_list" >
+      <image wx:for="{{item.fullstar}}" class="star" src="../img/star-full.png" wx:key="k1"></image>
+      <image wx:for="{{item.halfstar}}" class="star" src="../img/star-half.png" wx:key="k2"></image>
+      <text class="cmts_time">{{item.time}}</text>
+    </view>
+    <view class="cmts_item_content" ><text class="cmts_text">{{item.content}}</text></view>
+    <view class="cmts_item_info">
+      <view class="user">
+        <image class="uheader" src="{{item.avatarurl}}"></image>
+        <text class="uname">{{item.nickName}}</text>
+      </view>
+      <view class="good_info">
+        <image class="good" src="../img/good.png"></image>
+        <text class="good_num">{{item.approve}}</text>
+      </view>
+      
+    </view>
+  </view>
 </view>

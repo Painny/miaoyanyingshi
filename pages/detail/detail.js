@@ -10,8 +10,7 @@ Page({
     wx.request({
       url: 'https://m.maoyan.com/movie/'+id+'.json',
       data: {},
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      // header: {}, // 设置请求的 header
+      method: 'GET', 
       success: function(res){
         if(res.data.status==0){
           var info=res.data.data.MovieDetailModel;
@@ -21,6 +20,23 @@ Page({
           info.dra=info.dra.replace("</p>","");
           info.arrow='⇣';
           that.setData(info);
+          for(var i in res.data.data.CommentResponseModel.hcmts){
+            var fullstar=[];
+            var halfstar=[];
+            for(var j=0;j<parseInt(res.data.data.CommentResponseModel.hcmts[i].score);j++){
+              fullstar.push("*");
+              if(parseInt(res.data.data.CommentResponseModel.hcmts[i].score)<res.data.data.CommentResponseModel.hcmts[i].score){
+                halfstar=["*"];
+              }
+            }
+            var content=res.data.data.CommentResponseModel.hcmts[i].content;
+            content=content.replace("\n","");
+            console.log(content)
+            res.data.data.CommentResponseModel.hcmts[i].content=content;
+            res.data.data.CommentResponseModel.hcmts[i].fullstar=fullstar;
+            res.data.data.CommentResponseModel.hcmts[i].halfstar=halfstar;
+          }
+          that.setData(res.data.data.CommentResponseModel);
         }
       },
     })
@@ -40,7 +56,6 @@ Page({
     this.setData({"ishidden":"show"});
   },
   ended:function(){
-    // this.setData({"ishidden":"hidden"});
-    console.log(this.data)
+    this.setData({"ishidden":"hidden"});
   }
 })
