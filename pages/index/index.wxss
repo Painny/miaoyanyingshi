@@ -2,7 +2,7 @@
 .search_box{width:95%;}
 .search_input{border: grey 1px solid;width:75%;float: left;height: 1.92rem;margin-right: 0.27rem;}
 button{float: rigth;height: 2.13rem;}
-.movie_list{width:95%;margin-top:0.27rem;}
+.movie_list{width:95%;margin-top:0.27rem;height: 100%;}
 .movie_block{width:100%;border-bottom: #b2b2b2 1px solid;height: 5.33rem;padding-bottom: 0.27rem;margin-top: 0.27rem;}
 image{width: 18%;height: 92%; float: left;margin-right: 0.53rem;}
 .movie_info{float: left;width: 50%;height: 100%;}

@@ -8,7 +8,7 @@ Page({
   onLoad:function(){
     this.get_list();
   },
- get_list:function(){
+  get_list:function(){
    //先判断缓存里面有没有没过期的数据
     var movie_list=wx.getStorageSync('movie_list');
     var nowtime=Date.parse(new Date());
@@ -39,6 +39,9 @@ Page({
     wx.navigateTo({
       url: '../detail/detail?id='+id,
     });
+  },
+  loadmore:function(){
+    console.log(11211221)
   }
 
 })
